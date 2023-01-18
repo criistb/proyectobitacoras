@@ -7,7 +7,8 @@ urlpatterns = [
     path('user', views.user, name="user"),
     path('bitacora', views.bitacora, name="bitacora"),
     path('area', views.area, name="area"),
-    path('bitacoraFormulario', views.bitacoraFormulario, name="bitacoraFormulario")
+    path('buscar/', views.buscar)
+    #path('bitacoraFormulario', views.bitacoraFormulario, name="bitacoraFormulario")
 ]
 
 

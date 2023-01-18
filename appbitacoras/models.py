@@ -2,14 +2,18 @@ from django.db import models
 
 # Create your models here.
 
-class user(models.Model):
+class User(models.Model):
 
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=40)
     email = models.EmailField(max_length=40)
     id_area = models.CharField(max_length=40)
 
-class bitacora(models.Model):
+    def __str__(self):
+
+        return f"Nombre: {self.nombre} - Email: {self.email} - Id_area: {self.id_area}"
+
+class Bitacora(models.Model):
 
     id = models.AutoField(primary_key=True)
     numerobit = models.CharField(max_length=40)
@@ -19,7 +23,7 @@ class bitacora(models.Model):
     compañia = models.CharField(max_length=40)
 
 
-class area(models.Model):
+class Area(models.Model):
 
     id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=40)

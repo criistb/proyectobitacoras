@@ -3,10 +3,37 @@
 {% block contenidoQueCambia %}
 …
 
-    <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
-    <h1>Este es el título del Inicio que cambio</h1>
-    <p>Se ha heredado todo desde la plantilla padre</p>
-    <h3>En el hijo, inicio.html, casí no hay nada :)</h3>
+     <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+  
+
+     <h3>Podes buscar una bitacora:</h3>
+ 
+     <form action="/appbitacoras/buscar/" method="GET">
+ 
+         <input type="number" name="numerobit" id="numerobit">
+ 
+         <input type="submit" value="Buscar">
+ 
+ 
+ 
+ 
+     </form>
+ 
+     
+ 
+     {% if asignedto %}
+ 
+     <p>Estamos buscando el: {{numerobit}}</p>
+ 
+     <ul>
+     {% for Bitacora in asignedto %}
+         <li> {{Bitacora.numerobit}} </li>
+         <li> {{Bitacora.asignedto}} </li>
+     {% endfor %}
+ 
+     </ul>
+ 
+     {% endif %}
 
 {% endblock %}
 
