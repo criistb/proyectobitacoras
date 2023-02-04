@@ -5,8 +5,12 @@
 
      <!--Aquí va lo que cambia, y lo asociado a está vista :) -->
   
+     <div class="text-center"> 
+        <img height="40px" src="{{url}}">
+        <h3>Que bueno verte {{user.username}}</h3>
+    </div>
 
-     <h3>Podes buscar una bitacora:</h3>
+     <h3>Busca una bitacora:</h3>
  
      <form action="/appbitacoras/buscar/" method="GET">
  
@@ -32,6 +36,11 @@
      {% endfor %}
  
      </ul>
+
+     <div class="text-center"> 
+        <img height="40px" src="{{url}}">
+        <h3>Que bueno verte {{user.username}}</h3>
+    </div>
  
      {% endif %}
 

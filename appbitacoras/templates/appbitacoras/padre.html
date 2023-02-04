@@ -26,9 +26,20 @@
             <div class="container">
                 <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>´
                 <a class="navbar-brand" href="{% url 'bitacora' %}">Bitacoras</a>´
-                <a class="navbar-brand" href="{% url 'user' %}">Usuarios</a>
+                <a class="navbar-brand" href="{% url 'UserBit' %}">UsuariosBit</a>
                 <a class="navbar-brand" href="{% url 'area' %}">Areas</a>
-                <a class="btn btn-primary" href="#NADAAUN">INICIAR</a>
+                <a class="navbar-brand" href="{% url 'LeerUsuarioBit' %}">VerUsuariosBit</a>
+                
+
+                {%if request.user.is_authenticated %}
+                
+                <p class="text-muted small mb-4 mb-lg-0"> Hola, {{user.username}}!!.</p>
+
+                <button>
+                    <a href="{% url 'EditarPerfil' %}">EditarUser</a>
+                </button>
+                
+                {% endif %}
             </div>
         </nav>
 
@@ -74,7 +85,9 @@
                         <ul class="list-inline mb-2">
                             <li class="list-inline-item"><a href="#!">Ayuda</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contacto</a></li>
+                            <li class="list-inline-item"><a href="{% url 'Contacto' %}">Acerca de</a></li>
+                            <li class="list-inline-item">⋅</li>
+                            <li class="list-inline-item"><a href="{% url 'Logout' %}"">Logout</a></li>
                       
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Sitio Bitacoras - Summa.</p>
